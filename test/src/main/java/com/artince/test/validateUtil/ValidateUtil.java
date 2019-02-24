@@ -12,6 +12,7 @@ public class ValidateUtil {
 			
 		}else {
 			throw new BadRequestException(CodeDescription.FAILURE);
+			
 		}
 	}
 }
