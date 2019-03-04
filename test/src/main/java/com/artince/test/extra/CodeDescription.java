@@ -3,8 +3,8 @@ package com.artince.test.extra;
 public enum CodeDescription {
 	
 	SUCCESS(200,"Your Operation Done Successfully"),
-	FAILURE(500,"Internal Server Error!!!!");
-	
+	FAILURE(500,"Internal Server Error!!!!"),
+	INCORRECT_EMAIL(600,"Please Enter Valid Email!!");
 	
 	int code;
 	

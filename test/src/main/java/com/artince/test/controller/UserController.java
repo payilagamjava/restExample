@@ -28,4 +28,5 @@ public class UserController {
 	public BaseDto get(@PathVariable Long id) {
 		return userService.get(id);
 	}
+	
 }

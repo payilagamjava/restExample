@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 
 @Entity
-
+@Table(name="user",uniqueConstraints= {@UniqueConstraint(columnNames= {"name"})})
 public class User implements Serializable{
 
 	@Id
@@ -24,10 +26,13 @@ public class User implements Serializable{
 	@Column(name = "emp_id",nullable = false)
 	String empId;
 	
-	@Column(name = "mob_number")
+	@Column(name = "mob_number",nullable=false)
+	String password;
+	
+	@Column(name = "mob_number",insertable=false,updatable=false)
 	String mobNumber;
 	
-	@Column(name="email")
+	@Column(name="email",insertable=false,updatable=false)
 	String email;
 
 	public Long getId() {

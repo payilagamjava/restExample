@@ -23,6 +23,11 @@ public class UserService {
 		System.out.println(userDto.getId());
 		try {
 			ValidateUtil.notNull(userDto);
+			ValidateUtil.notNull(userDto.getName());
+			ValidateUtil.notNull(userDto.getEmpId());
+			if(userDto.getEmail()!=null) {
+				ValidateUtil.emailCheck(userDto.getEmail());
+			}
 			User user = ObjectConvertor.convertToUser(userDto);
 			user = userRepository.save(user);
 			baseDto.setResponseCode(CodeDescription.SUCCESS.getCode());
